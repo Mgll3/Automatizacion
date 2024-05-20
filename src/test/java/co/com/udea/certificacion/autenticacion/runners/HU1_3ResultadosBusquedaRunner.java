@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/HU1.1_busq_por_fecha.feature",
+        features = "src/test/resources/features/HU1.3_resultado_de_busq.feature",
         glue = "co.com.udea.certificacion.autenticacion.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class FindByDateRunner {}
+public class HU1_3ResultadosBusquedaRunner { }

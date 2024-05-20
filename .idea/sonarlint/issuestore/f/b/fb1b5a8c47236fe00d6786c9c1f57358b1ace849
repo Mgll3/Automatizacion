@@ -1,5 +1,9 @@
 
-¦
-java:S1128"^Remove this unused import 'co.com.udea.certificacion.autenticacion.interactions.wordToSearch'.(µË½®üÿÿÿÿ8ãıÓù1J$ab77425d-b039-4c0b-9d24-fa574cc74b00
-Š
-java:S1128"BRemove this unused import 'net.serenitybdd.core.pages.PageObject'.(’•Ì›úÿÿÿÿ8ãıÓù1J$447d17fc-20a7-423c-81df-9844891fdab0
+¬
+java:S1128"iRemove this unused import 'co.com.udea.certificacion.autenticacion.interactions.ConfirmPassengersToFind'.(Óü¢é8—ÙÄ½ù1J$c86d1a06-6783-4f99-8b29-cfdf49297459
+©
+java:S1128"aRemove this unused import 'co.com.udea.certificacion.autenticacion.interactions.SearchFlyToFind'.(¸ÇûÑúÿÿÿÿ8—ÙÄ½ù1J$8995106c-bc65-451b-9d7b-39091fbb7799
+k
+java:S1068"(Remove this unused "city" private field.(“øÌà8‚óÁ½ù1J$5bc77acc-c39e-4e77-ba51-da3ebf3f5fee
+l
+java:S1068")Remove this unused "city2" private field.(Ï×Æ·8‚óÁ½ù1J$73158fa2-730e-41a0-be10-f85267e35308

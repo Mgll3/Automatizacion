@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Busqueda por fecha" skipped="0" tests="1" time="9.71" timestamp="2024-05-19 09:40:16"><testcase name="Busqueda por fecha exitosa"/></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="2" name="Busqueda por fecha" skipped="0" tests="3" time="12.67" timestamp="2024-05-20 04:58:06"><testcase name="Busqueda por fecha exitosa"/><testcase name="Busqueda de fecha anterior al día actual"><failure message="&#10;Expected: not a string containing &quot;Recomendado:&quot;&#10;     but: was &quot;Recomendado:&quot;" type="java.lang.AssertionError">
+Expected: not a string containing "Recomendado:"
+     but: was "Recomendado:"</failure><system-err>
+Expected: not a string containing "Recomendado:"
+     but: was "Recomendado:"&#13;
+co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_2BusqPorFechaStepDefinition.canNotLookFlights(HU1_2BusqPorFechaStepDefinition.java:90)&#13;
+worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)&#13;
+worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)&#13;
+</system-err></testcase><testcase name="Busqueda sin fecha"><failure message="&#10;Expected: not a string containing &quot;Recomendado:&quot;&#10;     but: was &quot;Recomendado:&quot;" type="java.lang.AssertionError">
+Expected: not a string containing "Recomendado:"
+     but: was "Recomendado:"</failure><system-err>
+Expected: not a string containing "Recomendado:"
+     but: was "Recomendado:"&#13;
+co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_2BusqPorFechaStepDefinition.canNotFindFlights(HU1_2BusqPorFechaStepDefinition.java:109)&#13;
+worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)&#13;
+worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)&#13;
+</system-err></testcase></testsuite>
