@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Busqueda por fecha" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-05-20T02:40:16" hostname="MSI" time="13.022">
+<testsuite name="Busqueda por fecha" tests="3" skipped="0" failures="2" errors="0" timestamp="2024-05-20T21:58:06" hostname="MSI" time="19.423">
   <properties/>
-  <testcase name="Busqueda por fecha exitosa" classname="Busqueda por fecha" time="13.022"/>
+  <testcase name="Busqueda por fecha exitosa" classname="Busqueda por fecha" time="13.774"/>
+  <testcase name="Busqueda de fecha anterior al día actual" classname="Busqueda por fecha" time="3.209">
+    <failure message="java.lang.AssertionError: &#10;Expected: not a string containing &quot;Recomendado:&quot;&#10;     but: was &quot;Recomendado:&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
+Expected: not a string containing &quot;Recomendado:&quot;
+     but: was &quot;Recomendado:&quot;
+	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:38)
+	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:32)
+	at net.serenitybdd.screenplay.Actor.should(Actor.java:397)
+	at co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_2BusqPorFechaStepDefinition.canNotLookFlights(HU1_2BusqPorFechaStepDefinition.java:90)
+	at ✽.las fechas estarian bloqueadas y no las podria seleccionar(file:///C:/Users/migue/Desktop/U/Automatizacion/src/test/resources/features/HU1.1_busq_por_fecha.feature:12)
+</failure>
+  </testcase>
+  <testcase name="Busqueda sin fecha" classname="Busqueda por fecha" time="2.44">
+    <failure message="java.lang.AssertionError: &#10;Expected: not a string containing &quot;Recomendado:&quot;&#10;     but: was &quot;Recomendado:&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
+Expected: not a string containing &quot;Recomendado:&quot;
+     but: was &quot;Recomendado:&quot;
+	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:38)
+	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:32)
+	at net.serenitybdd.screenplay.Actor.should(Actor.java:397)
+	at co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_2BusqPorFechaStepDefinition.canNotFindFlights(HU1_2BusqPorFechaStepDefinition.java:109)
+	at ✽.no lo dejaria buscar(file:///C:/Users/migue/Desktop/U/Automatizacion/src/test/resources/features/HU1.1_busq_por_fecha.feature:17)
+</failure>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[may. 19, 2024 9:40:23 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+  <system-err><![CDATA[may. 20, 2024 4:58:12 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 124, returning the closest version; found: 120; Please update to a Selenium version that supports CDP version 124
 ]]></system-err>
 </testsuite>

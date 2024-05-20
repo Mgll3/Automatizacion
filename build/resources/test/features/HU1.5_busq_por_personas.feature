@@ -1,8 +1,8 @@
 Feature: Busqueda por cantidad de personas
 
 Scenario: Busqueda por cantidad de personas exitoso
-  Given Un usuario en la vista busqueda de vuelo
-   When Selecciona la cantidad de adultos y niños que viajarán
+  Given Un usuario en la vista busqueda de vuelo5
+   When Selecciona la cantidad de adultos y niños que viajaran
     And La cantidad total de adultos y niños es menor o igual a 8
    Then Debería mostrar los vuelos que coincidan con su búsqueda de acuerdo a la cantidad de personas
 

@@ -1,0 +1,23 @@
+HISTORIAS con DEBERIA O NO DEBERIA PASAR EL TEST:
+
+HU1.1
+    Scenario: Busqueda por fecha exitosa
+        SI PASA
+    Scenario: Busqueda de fecha anterior al día actual
+        NO PASA: Ya que no validan el dia
+    Scenario: Busqueda sin fecha
+        NO PASA: Ya que las fechas estan predeterminadas en el front
+
+HU1.2
+    Scenario: Busqueda por ciudades exitosa
+        SI PASA
+    Scenario: Busqueda por la misma ciudad de origen y destino
+        NO PASA: Busca si se le escribe la misma ciudad
+    Scenario: Busqueda sin ciudades
+        SI PASA
+
+HU1.3
+    Scenario: Mostrar Busqueda satisfactoriamente
+        SI PASA
+
+    Scenario: No existen resultados disponibles
