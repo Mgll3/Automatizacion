@@ -71,7 +71,7 @@ public class HU1_2BusqPorFechaStepDefinition {
 
         GivenWhenThen.then(user).should(GivenWhenThen
                 .seeThat(ValidationResultFlights.result(),
-                        Matchers.containsString(Constants2.RESULT1)));
+                        Matchers.containsString(Constants2.FLIGHT_RESULT)));
     }
 
     @When("intenta seleccionar las fechas del vuelo para un dia anterior al actual")
@@ -89,7 +89,7 @@ public class HU1_2BusqPorFechaStepDefinition {
         //Busco que no se muestre el mensaje de que encontro vuelos
         GivenWhenThen.then(user).should(GivenWhenThen
                 .seeThat(ValidationResultFlights.result(),
-                        Matchers.not(Matchers.containsString(Constants2.RESULT1))));
+                        Matchers.not(Matchers.containsString(Constants2.FLIGHT_RESULT))));
     }
 
     // Se llenan todos los campos menos las fechas
@@ -108,7 +108,7 @@ public class HU1_2BusqPorFechaStepDefinition {
         //TODO: solucionar Error porque no encuentra el elemento, pero no encontrarlo es correcto
         GivenWhenThen.then(user).should(GivenWhenThen
                 .seeThat(ValidationResultFlights.result(),
-                        Matchers.not(Matchers.containsString(Constants2.RESULT1))));
+                        Matchers.not(Matchers.containsString(Constants2.FLIGHT_RESULT))));
     }
 
 

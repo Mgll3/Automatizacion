@@ -59,7 +59,7 @@ public class HU1_1BusqPorCiudadesStepDefinition {
         //TODO: aqui se comprueba unicamente si se muestran resultados no si coinciden con su busqueda
         GivenWhenThen.then(user).should(GivenWhenThen
                 .seeThat(ValidationResultFlights.result(),
-                        Matchers.containsString(Constants2.RESULT1)));
+                        Matchers.containsString(Constants2.FLIGHT_RESULT)));
     }
 
     @When("selecciona la misma ciudad de origen y destino")
@@ -76,7 +76,7 @@ public class HU1_1BusqPorCiudadesStepDefinition {
     public void shouldIndicateUser(){
         GivenWhenThen.then(user).should(GivenWhenThen
                 .seeThat(ValidationResultFlights.result(),
-                        Matchers.not(Matchers.containsString(Constants2.RESULT1))));
+                        Matchers.not(Matchers.containsString(Constants2.FLIGHT_RESULT))));
     }
 
     @When("no selecciona las ciudades de origen y destino")
@@ -93,7 +93,7 @@ public class HU1_1BusqPorCiudadesStepDefinition {
         GivenWhenThen.then(user).should(GivenWhenThen
                 .seeThat(ValidationResultFlights.result(),
                         Matchers.allOf(
-                                Matchers.not(Matchers.containsString(Constants2.RESULT1)),
+                                Matchers.not(Matchers.containsString(Constants2.FLIGHT_RESULT)),
                                 Matchers.equalTo("")
                         )));
     }
