@@ -14,6 +14,10 @@ public class Constants2 {
 
     public static final String BAD_DATE = "15-06-2023";
 
-    public static final String RESULT1 = "Recomendado:";
+    public static final String FLIGHT_RESULT = "Recomendado:";
+
+    public static final int ADULTS = 3;
+    public static final int CHILD = 2;
+    public static final int BABIES = 1;
 
 }

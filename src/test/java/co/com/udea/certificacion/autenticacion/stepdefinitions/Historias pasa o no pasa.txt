@@ -21,3 +21,24 @@ HU1.3
         SI PASA
 
     Scenario: No existen resultados disponibles
+
+HU1.5
+    Scenario: Busqueda por cantidad de personas exitoso
+        SI PASA
+    Scenario: Busqueda por cantidad de adulto con niños exitoso
+        SI PASA
+    Scenario: Busqueda por cantidad de personas mayor a 8
+        NO PASA: El front no limita # de personas
+
+HU1.6
+    Scenario: Seleccionar solo ida satisfactoriamente
+        SI PASA
+    Scenario: Seleccionar ida y vuelta satisfactoriamente
+        SI PASA
+    Scenario: El usuario no selecciona ningún campo
+        SI PASA
+    Scenario: Busqueda por ida
+        ?
+    Scenario: Búsqueda por ida y regreso
+        ?
+
