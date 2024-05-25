@@ -38,7 +38,9 @@ dependencies {
     implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
     implementation "net.serenity-bdd:serenity-screenplay-webdriver:$rootProject.ext.serenityWebVersion"
-    implementation 'org.slf4j:slf4j-simple:1.7.32'
+    implementation 'org.slf4j:slf4j-api:2.0.0-alpha1'
+    implementation 'ch.qos.logback:logback-classic:1.2.10'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.16.1'
 
     //Test compilation
     testImplementation "junit:junit:$rootProject.ext.junit"

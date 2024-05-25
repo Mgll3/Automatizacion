@@ -68,5 +68,22 @@ public class HU1_3ResultadosBusquedaStepDefinition {
                 GivenWhenThen.seeThat( FlightDetailQuestions.FlightStops.of(flightDetail), Matchers.containsString(Constants2.SCALE))
         );
     }
+
+    @Then("no se muestran vuelos disponibles")
+    public void shouldNotLookFlights() {
+        GivenWhenThen.then(user).should(GivenWhenThen.seeThat(
+                ValidationResultFlights.result(),
+                Matchers.allOf(
+                        Matchers.not(Matchers.containsString(Constants2.FLIGHT_RESULT)),
+                        Matchers.equalTo("")
+                )));
+    }
+
+    @Then("no se encontraron resultados")
+    public void NoResultsFound() {
+        GivenWhenThen.then(user).should(GivenWhenThen
+                .seeThat(ValidationResultFlights.result(),
+                        Matchers.isEmptyOrNullString()));
+    }
 }
 

@@ -96,5 +96,6 @@ public class HU1_1BusqPorCiudadesStepDefinition {
                                 Matchers.not(Matchers.containsString(Constants2.FLIGHT_RESULT)),
                                 Matchers.equalTo("")
                         )));
+
     }
 }
