@@ -38,6 +38,7 @@ dependencies {
     implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
     implementation "net.serenity-bdd:serenity-screenplay-webdriver:$rootProject.ext.serenityWebVersion"
+    implementation 'org.slf4j:slf4j-simple:1.7.32'
 
     //Test compilation
     testImplementation "junit:junit:$rootProject.ext.junit"

@@ -57,5 +57,19 @@ public class HomeFlights extends PageObject  {
             .the("Texto Resultados de Vuelo")
             .locatedBy("//*[@id='resultSpan']");
 
+    public static final Target DEPARTURE_TIME_HOUR = Target
+            .the("Hora de ida de Vuelo")
+            .locatedBy("//*[@id='departure-time']");
 
+    public static final Target ARRIVAL_TIME_HOUR = Target
+            .the("Hora de llegada de Vuelo")
+            .locatedBy("//*[@id='arrival-time']");
+
+    public static final Target PRICE_FLIGHT = Target
+            .the("Precio del Vuelo")
+            .locatedBy("//*[@id='price-flight']");
+
+    public static final Target FLIGHT_SCALE = Target
+            .the("Escala del Vuelo")
+            .locatedBy("//*[@id='fligth-scale']");
 }
