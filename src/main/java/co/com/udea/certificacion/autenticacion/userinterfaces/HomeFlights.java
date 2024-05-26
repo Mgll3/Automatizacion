@@ -72,4 +72,8 @@ public class HomeFlights extends PageObject  {
     public static final Target FLIGHT_SCALE = Target
             .the("Escala del Vuelo")
             .locatedBy("//*[@id='fligth-scale']");
+
+    public static final Target  CLASS_RESULT = Target
+            .the("Texto resultado clase del vuelo")
+            .locatedBy("//*[@id='class-option']");
 }

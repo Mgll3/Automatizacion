@@ -21,6 +21,8 @@ public class Constants2 {
     public static final String SCALE= "Directo";
 
     public static final String PRICE = "22500 COP";
+
+
     public static final int ADULTS = 3;
     public static final int CHILD = 2;
     public static final int BABIES = 1;

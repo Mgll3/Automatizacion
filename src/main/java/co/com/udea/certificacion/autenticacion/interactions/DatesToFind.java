@@ -13,7 +13,7 @@ public class DatesToFind implements Interaction {
 
     private String date;
 
-    public DatesToFind(String date) {
+    public DatesToFind (String date) {
         this.date = date;
     }
 
