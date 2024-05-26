@@ -1,5 +1,6 @@
 package co.com.udea.certificacion.autenticacion.stepdefinitions;
 
+import co.com.udea.certificacion.autenticacion.questions.ValidationClassPricesFlights;
 import co.com.udea.certificacion.autenticacion.tasks.*;
 import co.com.udea.certificacion.autenticacion.userinterfaces.HomeFlights;
 import co.com.udea.certificacion.autenticacion.utils.Constants2;
@@ -9,11 +10,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.targets.Target;
+import org.hamcrest.Matchers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,6 +24,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static co.com.udea.certificacion.autenticacion.userinterfaces.HomeFlights.flightClassElement;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
 import static org.hamcrest.Matchers.*;
@@ -61,8 +65,19 @@ public class HU1_5_1VisualVueloPorClaseStepDefinition {
 
         WebDriverWait wait = new WebDriverWait(theDriver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(), 'Selecciona')]")));
-        Target flightClassElement = Target.the("Flight class")
-                .located(By.xpath("//*[contains(text(), 'Selecciona')]"));
         user.should(seeThat(Text.of(flightClassElement), containsString("Selecciona")));
-    }}
+    }
+
+    @Then("Deben mostrarse los vuelos disponibles con las clases en los resultados y reflejar el cambio en precio entre clases")
+    public void FindFlightsAndChangePricesClass() {
+
+        WebDriverWait wait = new WebDriverWait(theDriver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(), 'Selecciona')]")));
+        user.should(seeThat(Text.of(flightClassElement), containsString("Selecciona")));
+        GivenWhenThen.then(user).should(GivenWhenThen
+                .seeThat(ValidationClassPricesFlights.arePricesDifferent(),
+                        Matchers.is(true)
+                ));
+    }
+}
 

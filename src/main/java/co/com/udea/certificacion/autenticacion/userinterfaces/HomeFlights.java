@@ -2,6 +2,7 @@ package co.com.udea.certificacion.autenticacion.userinterfaces;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
+import org.openqa.selenium.By;
 
 public class HomeFlights extends PageObject  {
 
@@ -73,7 +74,15 @@ public class HomeFlights extends PageObject  {
             .the("Escala del Vuelo")
             .locatedBy("//*[@id='fligth-scale']");
 
-    public static final Target  CLASS_RESULT = Target
-            .the("Texto resultado clase del vuelo")
-            .locatedBy("//*[@id='class-option']");
+    public static final Target flightClassElement = Target
+            .the("Flight class")
+            .located(By.xpath("//*[contains(text(), 'Selecciona')]"));
+
+    public static final Target FLIGHT_CLASS_ECONOMIC = Target
+            .the("Precio por clase economica del Vuelo")
+            .locatedBy("//*[@id='class-economico-button']");
+
+    public static final Target FLIGHT_CLASS_EXECUTIVE = Target
+            .the("Precio por clase ejecutiva el Vuelo")
+            .locatedBy("//*[@id='class-ejecutivo-button']");
 }
