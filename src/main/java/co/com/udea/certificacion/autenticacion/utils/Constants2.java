@@ -10,6 +10,8 @@ public class Constants2 {
 
     public static final String DATE1 = "15-06-2024";
 
+    public static final String DATE2 = "18-06-2024";
+
     public static final String HOUR1 = "8:15";
 
     public static final String HOUR2 = "14:45";
