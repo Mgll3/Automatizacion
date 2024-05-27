@@ -42,31 +42,24 @@ public class HU1_5BusqPorPersonasStepDefinition {
 
     @Given("Un usuario en la vista busqueda de vuelo5")
     public void inTheSite(){
-        logger.info("Opening the browser to the home page.");
         user.attemptsTo(OpenThe.browser(new HomeFlights()));
     }
 
     @When("Selecciona la cantidad de adultos y ninios que viajaran")
     public void selectPassengers() {
-        logger.info("Selecting the date.");
         user.attemptsTo(SelectThe.date(Constants2.DATE1));
-        logger.info("Entering the cities.");
         user.attemptsTo(EnterThe.cities(Constants2.CITY1, Constants2.CITY2));
-        logger.info("Choosing the number of passengers.");
         user.attemptsTo(ChooseThe.passengers(Constants2.ADULTS, Constants2.CHILD, Constants2.BABIES));
-        logger.info("Submitting the flight search.");
         user.attemptsTo(SubmitThe.flight());
     }
 
     @When("La cantidad de infantes que viajan es menor a 7")
     public void validateChildrenCount() {
-        logger.info("Validating the number of children.");
         assert Constants2.CHILD < 7 : "La cantidad de infantes debe ser menor a 7";
     }
 
     @When("la cantidad de adultos que viajan es minimo uno")
     public void validateAdultsCount() {
-        logger.info("Validating the number of adults.");
         assert Constants2.ADULTS >= 1 : "Debe haber al menos un adulto";
     }
 
@@ -79,6 +72,23 @@ public class HU1_5BusqPorPersonasStepDefinition {
 
         GivenWhenThen.then(user).should(GivenWhenThen
                 .seeThat(ValidationPassengersCount.result(Constants2.ADULTS, Constants2.CHILD, Constants2.BABIES), Matchers.is(true)));
+    }
+
+    @When("La suma de ambos campos es mayor que 8")
+    public void validateTotalPassengers() {
+        int totalPassengers = Constants2.ADULTS + Constants2.CHILD + Constants2.BABIES;
+        assert totalPassengers > 8 : "La suma de adultos e infantes debe ser mayor a 8";
+    }
+
+    @Then("no lo dejaria buscar3")
+    public void shouldNotLookFlights(){
+        GivenWhenThen.then(user).should(GivenWhenThen
+                .seeThat(ValidationResultFlights.result(),
+                        Matchers.allOf(
+                                Matchers.not(Matchers.containsString(Constants2.FLIGHT_RESULT)),
+                                Matchers.equalTo("")
+                        )));
+
     }
 }
 
