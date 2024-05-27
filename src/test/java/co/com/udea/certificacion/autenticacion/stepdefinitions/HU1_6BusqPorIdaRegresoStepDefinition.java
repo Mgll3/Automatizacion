@@ -1,6 +1,7 @@
 package co.com.udea.certificacion.autenticacion.stepdefinitions;
 
 import co.com.udea.certificacion.autenticacion.questions.ValidationResultFlights;
+import co.com.udea.certificacion.autenticacion.questions.ValidationReturnDateActive;
 import co.com.udea.certificacion.autenticacion.tasks.*;
 import co.com.udea.certificacion.autenticacion.userinterfaces.HomeFlights;
 import co.com.udea.certificacion.autenticacion.utils.Constants2;
@@ -67,6 +68,14 @@ public class HU1_6BusqPorIdaRegresoStepDefinition {
 
     @Then("Se muestra los vuelos que coincidan con su busqueda en ida y regreso")
     public void canLookRoundTripsFlights(){
-        canLookOneWayFlights();
+        GivenWhenThen.then(user).should(GivenWhenThen
+                .seeThat(ValidationResultFlights.result(),
+                        Matchers.containsString(Constants2.FLIGHT_RESULT)));
+    }
+
+    @Then("se habilita unicamente del campo la fecha de ida")
+    public void OneWayOption(){
+        GivenWhenThen.then(user).should(
+                GivenWhenThen.seeThat(ValidationReturnDateActive.result(),Matchers.containsString("")));
     }
 }

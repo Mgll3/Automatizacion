@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Enter;
 
 import static co.com.udea.certificacion.autenticacion.userinterfaces.HomeFlights.DEPARTURE_TEXTINPUT;
+import static co.com.udea.certificacion.autenticacion.userinterfaces.HomeFlights.RETURN_TEXTINPUT;
 
 public class DatesToSearch implements Interaction {
 
@@ -19,7 +20,8 @@ public class DatesToSearch implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Enter.theValue(date1,date2).into(DEPARTURE_TEXTINPUT));
+        actor.attemptsTo(Enter.theValue(date1).into(DEPARTURE_TEXTINPUT));
+        actor.attemptsTo(Enter.theValue(date2).into(RETURN_TEXTINPUT));
     }
 
     public static DatesToSearch inTextInput(String date1, String date2){
