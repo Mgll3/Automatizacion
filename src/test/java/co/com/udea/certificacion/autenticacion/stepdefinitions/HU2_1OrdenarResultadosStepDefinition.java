@@ -1,11 +1,10 @@
 package co.com.udea.certificacion.autenticacion.stepdefinitions;
 
-import co.com.udea.certificacion.autenticacion.questions.ValidationResultFlights;
+import co.com.udea.certificacion.autenticacion.questions.ValidateOrderResult;
 import co.com.udea.certificacion.autenticacion.tasks.*;
 import co.com.udea.certificacion.autenticacion.userinterfaces.HomeFlights;
 import co.com.udea.certificacion.autenticacion.utils.Constants2;
 import io.cucumber.java.Before;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,6 +16,7 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 import org.hamcrest.Matchers;
 import org.openqa.selenium.WebDriver;
 
+import static co.com.udea.certificacion.autenticacion.userinterfaces.HomeFlights.*;
 import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
 
 public class HU2_1OrdenarResultadosStepDefinition {
@@ -35,19 +35,24 @@ public class HU2_1OrdenarResultadosStepDefinition {
     @Given("Un usuario en la vista resultados de vuelo")
     public void inTheSite() {
         user.attemptsTo(OpenThe.browser(new HomeFlights()));
+        user.attemptsTo(PreferThe.dates(Constants2.DATE1, Constants2.DATE2));
+        user.attemptsTo(FillThe.cities(Constants2.CITY1, Constants2.CITY2));
+        user.attemptsTo(SubmitThe.flight());
     }
 
-    @When("Selecciona la opción precio de forma descendente")
-    public void preferOneWay() {
-        //TODO
+    @When("Selecciona la opcion precio de forma descendente")
+    public void bestPriceButton() {
+        user.attemptsTo(ClickThe.filterButton(BEST_PRICE_BUTTON));
     }
 
     @Then("Se muestra los vuelos ordenados que coincidan con el precio descendente")
-    public void canLookOneWayFlights(){
-        //TODO
+    public void bestPriceResult(){
+        GivenWhenThen.then(user).should(GivenWhenThen
+                .seeThat(ValidateOrderResult.lessThan(FIRST_PRICE_TEXT, SECOND_PRICE_TEXT, " COP"),
+                        Matchers.is(Boolean.TRUE)));
     }
 
-    @When("Selecciona la opción numero de escalas de forma descendente")
+    @When("Selecciona la opcion numero de escalas de forma descendente")
     public void preferRoundTrip() {
         //TODO
     }
@@ -57,7 +62,7 @@ public class HU2_1OrdenarResultadosStepDefinition {
         //TODO
     }
 
-    @When("Selecciona la opción duracion de forma descendente")
+    @When("Selecciona la opcion duracion de forma descendente")
     public void noSelectTrip(){
         //TODO
     }

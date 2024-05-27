@@ -85,4 +85,24 @@ public class HomeFlights extends PageObject  {
     public static final Target FLIGHT_CLASS_EXECUTIVE = Target
             .the("Precio por clase ejecutiva el Vuelo")
             .locatedBy("//*[@id='class-ejecutivo-button']");
+
+    public static final Target DIRECT_FLIGHT_BUTTON = Target
+            .the("Boton de ordenar primero los vuelos directos")
+            .locatedBy("/html/body/div/div/div[5]/div[1]/div/div[2]/button[1]");
+
+    public static final Target BEST_PRICE_BUTTON = Target
+            .the("Boton de ordenar por mejor precio")
+            .locatedBy("/html/body/div/div/div[5]/div[1]/div/div[2]/button[2]");
+
+    public static final Target DURATION_BUTTON = Target
+            .the("")
+            .locatedBy("/html/body/div/div/div[5]/div[1]/div/div[2]/button[3]");
+
+    public static final Target FIRST_PRICE_TEXT = Target
+            .the("")
+            .locatedBy("/html/body/div/div/div[5]/div[3]/div[1]/div[7]/div");
+
+    public static final Target SECOND_PRICE_TEXT = Target
+            .the("")
+            .locatedBy("/html/body/div/div/div[5]/div[3]/div[2]/div[7]/div");
 }
