@@ -85,4 +85,8 @@ public class HomeFlights extends PageObject  {
     public static final Target FLIGHT_CLASS_EXECUTIVE = Target
             .the("Precio por clase ejecutiva el Vuelo")
             .locatedBy("//*[@id='class-ejecutivo-button']");
+
+    public static final Target FLIGHT_PASSENGERS_COUNT = Target
+            .the("Numero de pasajeros por vuelo")
+            .locatedBy("//*[@id='passenger-count']");
 }

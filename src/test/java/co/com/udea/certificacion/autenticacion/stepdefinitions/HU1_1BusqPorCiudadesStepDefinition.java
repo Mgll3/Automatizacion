@@ -38,7 +38,6 @@ public class HU1_1BusqPorCiudadesStepDefinition {
         setTheStage(new OnlineCast());
     }
 
-    //TODO: ¿Se debe reescribir este usuario en la vista en cada step definition sabiendo que este se reemplaza en todos?
     @Given("Un usuario en la vista busqueda de vuelo2")
     public void inTheSite(){
 
@@ -71,7 +70,6 @@ public class HU1_1BusqPorCiudadesStepDefinition {
 
     }
 
-    //TODO: Solo estoy validando si no aparecen resultados, ¿Deberia validar que aparezca un mensaje?
     @Then("le indicaria al usuario que debe seleccionar un destino diferente al origen")
     public void shouldIndicateUser(){
         GivenWhenThen.then(user).should(GivenWhenThen
@@ -87,7 +85,6 @@ public class HU1_1BusqPorCiudadesStepDefinition {
 
     }
 
-    //TODO: Problema de poner 2 al final por duplicacion de codigo segun el proyecto
     @Then("no lo dejaria buscar2")
     public void shouldNotLookFlights(){
         GivenWhenThen.then(user).should(GivenWhenThen

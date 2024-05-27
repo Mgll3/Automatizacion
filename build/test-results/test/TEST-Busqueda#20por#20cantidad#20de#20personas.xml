@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Busqueda por cantidad de personas" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-05-27T03:53:20" hostname="SARAY" time="64.825">
+  <properties/>
+  <testcase name="Busqueda por cantidad de personas exitoso" classname="Busqueda por cantidad de personas" time="51.542"/>
+  <testcase name="Busqueda por cantidad de adulto con niños exitoso" classname="Busqueda por cantidad de personas" time="13.28"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[may. 26, 2024 10:53:22 P. M. co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_5BusqPorPersonasStepDefinition inTheSite
+INFORMACIÓN: Opening the browser to the home page.
+may. 26, 2024 10:53:37 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find CDP implementation matching 125
+may. 26, 2024 10:53:37 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+ADVERTENCIA: Unable to find version of CDP to use for 125.0.6422.113. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+may. 26, 2024 10:53:53 P. M. co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_5BusqPorPersonasStepDefinition selectPassengers
+INFORMACIÓN: Selecting the date.
+may. 26, 2024 10:53:57 P. M. co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_5BusqPorPersonasStepDefinition selectPassengers
+INFORMACIÓN: Entering the cities.
+may. 26, 2024 10:54:00 P. M. co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_5BusqPorPersonasStepDefinition selectPassengers
+INFORMACIÓN: Choosing the number of passengers.
+may. 26, 2024 10:54:07 P. M. co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_5BusqPorPersonasStepDefinition selectPassengers
+INFORMACIÓN: Submitting the flight search.
+may. 26, 2024 10:54:12 P. M. co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_5BusqPorPersonasStepDefinition inTheSite
+INFORMACIÓN: Opening the browser to the home page.
+may. 26, 2024 10:54:16 P. M. co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_5BusqPorPersonasStepDefinition selectPassengers
+INFORMACIÓN: Selecting the date.
+may. 26, 2024 10:54:17 P. M. co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_5BusqPorPersonasStepDefinition selectPassengers
+INFORMACIÓN: Entering the cities.
+may. 26, 2024 10:54:19 P. M. co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_5BusqPorPersonasStepDefinition selectPassengers
+INFORMACIÓN: Choosing the number of passengers.
+may. 26, 2024 10:54:23 P. M. co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_5BusqPorPersonasStepDefinition selectPassengers
+INFORMACIÓN: Submitting the flight search.
+may. 26, 2024 10:54:24 P. M. co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_5BusqPorPersonasStepDefinition validateChildrenCount
+INFORMACIÓN: Validating the number of children.
+may. 26, 2024 10:54:24 P. M. co.com.udea.certificacion.autenticacion.stepdefinitions.HU1_5BusqPorPersonasStepDefinition validateAdultsCount
+INFORMACIÓN: Validating the number of adults.
+]]></system-err>
+</testsuite>

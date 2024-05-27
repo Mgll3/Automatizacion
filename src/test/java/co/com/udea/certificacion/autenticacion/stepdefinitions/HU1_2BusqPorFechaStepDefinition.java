@@ -83,7 +83,6 @@ public class HU1_2BusqPorFechaStepDefinition {
 
     }
 
-    //Todo: cambiar HU? dejamos que no se puedan ver vuelos o dejamos estarian bloquedas que seria más dificil no solo de automatizar sino de desarrollar desde el front
     @Then("las fechas estarian bloqueadas y no las podria seleccionar")
     public void canNotLookFlights(){
         //Busco que no se muestre el mensaje de que encontro vuelos
@@ -105,7 +104,7 @@ public class HU1_2BusqPorFechaStepDefinition {
     @Then("no lo dejaria buscar")
     public void canNotFindFlights(){
         //Busco que no se muestre el mensaje de que encontro vuelos
-        //TODO: solucionar Error porque no encuentra el elemento, pero no encontrarlo es correcto
+
         GivenWhenThen.then(user).should(GivenWhenThen
                 .seeThat(ValidationResultFlights.result(),
                         Matchers.not(Matchers.containsString(Constants2.FLIGHT_RESULT))));

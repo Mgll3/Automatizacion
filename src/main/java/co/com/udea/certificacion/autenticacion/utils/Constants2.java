@@ -26,7 +26,4 @@ public class Constants2 {
     public static final int CHILD = 2;
     public static final int BABIES = 1;
 
-    public static final int ECONOMICO = 84200;
-    public static final int EJECUTIVO = 168400;
-
 }
