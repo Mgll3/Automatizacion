@@ -99,10 +99,26 @@ public class HomeFlights extends PageObject  {
             .locatedBy("/html/body/div/div/div[5]/div[1]/div/div[2]/button[3]");
 
     public static final Target FIRST_PRICE_TEXT = Target
-            .the("")
+            .the("Precio de el primer resultado")
             .locatedBy("/html/body/div/div/div[5]/div[3]/div[1]/div[7]/div");
 
     public static final Target SECOND_PRICE_TEXT = Target
-            .the("")
+            .the("Precio del segundo resultado")
             .locatedBy("/html/body/div/div/div[5]/div[3]/div[2]/div[7]/div");
+
+    public static final Target FIRST_HOUR_TEXT = Target
+            .the("Hora del primer resultado")
+            .locatedBy("/html/body/div/div/div[5]/div[3]/div[1]/div[2]/div[1]");
+
+    public static final Target SECOND_HOUR_TEXT = Target
+            .the("Hora del segundo resultado")
+            .locatedBy("/html/body/div/div/div[5]/div[3]/div[2]/div[2]/div[1]");
+
+    public static final Target FIRST_DURATION_TEXT = Target
+            .the("Duracion del primer resultado")
+            .locatedBy("/html/body/div/div/div[5]/div[3]/div[1]/div[4]/div/button");
+
+    public static final Target LAST_DURATION_TEXT = Target
+            .the("Duracion del primer resultado")
+            .locatedBy("/html/body/div/div/div[5]/div[3]/div[15]/div[4]/div/button");
 }

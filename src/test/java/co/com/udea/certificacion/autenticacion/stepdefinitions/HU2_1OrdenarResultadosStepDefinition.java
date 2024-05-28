@@ -35,8 +35,8 @@ public class HU2_1OrdenarResultadosStepDefinition {
     @Given("Un usuario en la vista resultados de vuelo")
     public void inTheSite() {
         user.attemptsTo(OpenThe.browser(new HomeFlights()));
-        user.attemptsTo(PreferThe.dates(Constants2.DATE1, Constants2.DATE2));
         user.attemptsTo(FillThe.cities(Constants2.CITY1, Constants2.CITY2));
+        user.attemptsTo(PreferThe.dates(Constants2.DATE1, Constants2.DATE2));
         user.attemptsTo(SubmitThe.flight());
     }
 
@@ -53,22 +53,26 @@ public class HU2_1OrdenarResultadosStepDefinition {
     }
 
     @When("Selecciona la opcion numero de escalas de forma descendente")
-    public void preferRoundTrip() {
-        //TODO
+    public void lessHourButton() {
+        user.attemptsTo(ClickThe.filterButton(DIRECT_FLIGHT_BUTTON));
     }
 
     @Then("Se muestra los vuelos ordenados que coincidan con el numero de escalas descendente")
-    public void canLookRoundTripsFlights(){
-        //TODO
+    public void lessHourResult(){
+        GivenWhenThen.then(user).should(GivenWhenThen
+                .seeThat(ValidateOrderResult.lessThan(FIRST_DURATION_TEXT, LAST_DURATION_TEXT, ""),
+                        Matchers.is(Boolean.TRUE)));
     }
 
     @When("Selecciona la opcion duracion de forma descendente")
-    public void noSelectTrip(){
-        //TODO
+    public void durationButton(){
+        user.attemptsTo(ClickThe.filterButton(DURATION_BUTTON));
     }
 
     @Then("Se muestra los vuelos ordenados que coincidan con la duracion descendente")
-    public void defautOption(){
-        //TODO
+    public void DurationResult(){
+        GivenWhenThen.then(user).should(GivenWhenThen
+                .seeThat(ValidateOrderResult.lessThan(FIRST_HOUR_TEXT, SECOND_HOUR_TEXT, ":"),
+                        Matchers.is(Boolean.TRUE)));
     }
 }
