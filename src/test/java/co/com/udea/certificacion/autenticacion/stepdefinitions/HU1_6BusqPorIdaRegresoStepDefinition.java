@@ -1,10 +1,8 @@
 package co.com.udea.certificacion.autenticacion.stepdefinitions;
 
 import co.com.udea.certificacion.autenticacion.questions.ValidationResultFlights;
-import co.com.udea.certificacion.autenticacion.tasks.EnterThe;
-import co.com.udea.certificacion.autenticacion.tasks.OpenThe;
-import co.com.udea.certificacion.autenticacion.tasks.SelectThe;
-import co.com.udea.certificacion.autenticacion.tasks.SubmitThe;
+import co.com.udea.certificacion.autenticacion.questions.ValidationReturnDateActive;
+import co.com.udea.certificacion.autenticacion.tasks.*;
 import co.com.udea.certificacion.autenticacion.userinterfaces.HomeFlights;
 import co.com.udea.certificacion.autenticacion.utils.Constants2;
 import io.cucumber.java.Before;
@@ -37,34 +35,47 @@ public class HU1_6BusqPorIdaRegresoStepDefinition {
 
     @Given("Un usuario en la vista busqueda de vuelo6")
     public void inTheSite(){
-
         user.attemptsTo(OpenThe.browser(new HomeFlights()));
-
     }
 
     @When("selecciona la opcion solo ida")
-    public void selectOneWay() {
-
+    public void preferOneWay() {
         user.attemptsTo(SelectThe.date(Constants2.DATE1));
-        user.attemptsTo(EnterThe.cities(Constants2.CITY1, Constants2.CITY2));
-        user.attemptsTo(SubmitThe.flight());
     }
 
     @And("llena todos los campos correctamente")
     public void fillFields() {
-        user.attemptsTo(SelectThe.date(Constants2.DATE1));
         user.attemptsTo(EnterThe.cities(Constants2.CITY1, Constants2.CITY2));
         user.attemptsTo(SubmitThe.flight());
     }
 
-    //TODO: Validar que se muestren vuelos especificamente con su busqueda? o que se muestren vuelos y ya
     @Then("Se muestra los vuelos que coincidan con su busqueda")
-    public void canLookFlights(){
+    public void canLookOneWayFlights(){
         GivenWhenThen.then(user).should(GivenWhenThen
                 .seeThat(ValidationResultFlights.result(),
                         Matchers.containsString(Constants2.FLIGHT_RESULT)));
-
     }
 
+    @When("selecciona la opcion ida y regreso")
+    public void preferRoundTrip() {
+        user.attemptsTo(PreferThe.dates(Constants2.DATE1, Constants2.DATE2));
+    }
+    @And("llena todos los campos correctamente2")
+    public void fillFields2() {
+        user.attemptsTo(FillThe.cities(Constants2.CITY1, Constants2.CITY2));
+        user.attemptsTo(SubmitThe.flight());
+    }
 
+    @Then("Se muestra los vuelos que coincidan con su busqueda en ida y regreso")
+    public void canLookRoundTripsFlights(){
+        GivenWhenThen.then(user).should(GivenWhenThen
+                .seeThat(ValidationResultFlights.result(),
+                        Matchers.containsString(Constants2.FLIGHT_RESULT)));
+    }
+
+    @Then("se habilita unicamente del campo la fecha de ida")
+    public void OneWayOption(){
+        GivenWhenThen.then(user).should(
+                GivenWhenThen.seeThat(ValidationReturnDateActive.result(),Matchers.containsString("")));
+    }
 }
